@@ -19,12 +19,12 @@ body {
     z-index: 1;
   }
 
-    /* .adminButton i {
+    .adminButton i {
       font-size: 22px;
-    } */
-    .adminButton .fa-cog {
+    }
+    /* .adminButton .fa-cog {
         font-size: 22px;
-      }
+      } */
 
   .adminButtons {
     position: absolute;
