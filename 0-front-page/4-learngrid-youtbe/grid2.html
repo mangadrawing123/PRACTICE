@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=4.0">
+    <title>grid-youtube</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1em;
+            grid-auto-rows: minmax(100px, auto);
+
+        }
+        .nested {
+            grid-template-columns: repeat(3, 1fr);
+            display: grid;
+            grid-auto-rows: 100px;
+            grid-gap: 1em;
+        }
+        .nested >div{
+            border: #333 1px solid;
+            padding: 1em;
+        }
+        .wrapper > div {
+            background: #eee;
+            padding: 1em;
+        }
+        .wrapper > div:nth-child(odd){
+            background: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed illum labore atque accusantium expedita. Adipisci provident tenetur accusamus nulla sit ipsum pariatur distinctio quae! Tenetur enim saepe debitis dolorum in aspernatur temporibus recusandae quibusdam fugit obcaecati architecto nostrum neque, velit aliquid. Consectetur nemo doloribus, sunt perspiciatis ad soluta necessitatibus! Expedita?</div>
+        <div class="nested">
+            <div>Lorem, ipsum dolor.</div>
+            <div>Molestiae, incidunt nobis!</div>
+            <div>Autem, porro quidem?</div>
+            <div>Lorem, ipsum dolor.</div>
+            <div>Molestiae, incidunt nobis!</div>
+            <div>Autem, porro quidem?</div>
+            <div>Lorem, ipsum dolor.</div>
+            <div>Molestiae, incidunt nobis!</div>
+            <div>Autem, porro quidem?</div>
+            <div>Lorem, ipsum dolor.</div>
+            <div>Molestiae, incidunt nobis!</div>
+            <div>Autem, porro quidem?</div>
+            <div>Lorem, ipsum dolor.</div>
+            <div>Molestiae, incidunt nobis!</div>
+            <div>Autem, porro quidem?</div>
+        </div>
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor sit amet.</div>
+        <div>Lorem ipsum dolor sit amet.</div>
+    </div>
+</body>
+</html>

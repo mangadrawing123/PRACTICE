@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <!-- https://www.youtube.com/watch?v=HgwCeNVPlo0 -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=4.0">
+    <title>grid-youtube</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-areas:  
+            "title title"
+            " header header "
+            " sidebar sidebar"
+            " content content"
+            "footer footer";
+            grid-gap: 1em;
+        }
+        .title {
+            grid-area: title;
+        }
+        .header {
+            grid-area: header;
+        }
+        .sidebar {
+            grid-area: sidebar;
+        }
+        .content {
+            grid-area: content;
+        }
+        .footer {
+            grid-area: footer;
+        }
+        .container div:nth-child(even) {
+        background: red;
+        }
+        .container div:nth-child(odd) {
+            background: green;
+        }
+        @media screen and (min-width: 768px) {
+            
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 500px 500px 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-template-areas:  
+                ". header title ."
+                ". sidebar content ."
+                ". sidebar content ."
+                ". footer footer ."
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Title</div>
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">
+            <p>A</p>
+            <p>B</p>
+        </div>
+        <div class="footer">Footer</div>    
+    </div>
+</body>
+</html>
