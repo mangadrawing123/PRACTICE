@@ -11,6 +11,10 @@
             padding: 0;
             background: rgb(37, 37, 37);
         }
+        .container {
+            display: grid;
+            grid-template-rows: 1fr auto;
+        }
         .divCountDownBar {
             height: 3vh;
             margin-top: 5vh;
@@ -21,12 +25,20 @@
             background: black;
             height: 3vh;
         }
+        .textInput {
+            color: white;
+            text-align: center;
+            font-size: 50px;
+            background: rgba(255, 255, 255, 0.123);
+            border: none;
+        }
     </style>
     
     <script>
         function initBarCount() {
             var divTimeLeft = document.querySelector(".divTimeLeft");
             var divCountDownBar = document.querySelector(".divCountDownBar");
+            //set timer to one hour default
             var startTimer = setInterval(barCount, 10)
             function barCount() {
                if (divTimeLeft.clientWidth < divCountDownBar.clientWidth ) {
@@ -34,23 +46,42 @@
                }else {
                     divTimeLeft.style.width = divCountDownBar.clientWidth + 'px';
                     clearInterval(startTimer);
+                    document.getElementById( 'timer-beep' ).play();
+                    // <!-- make sound alert once finsihed- -->
                 }
             }
         }
+        //input focus then Enter key to star the timer.
+
         //reset button?
+        
+        // start button?
 
     </script>
     
 </head>
 <body>
-    <!-- timer dispaly liek googlde 39m 30s -->
-    <!-- Input and display text : ?Waht do you want to focus? - div next to  -->
-    <div class="divCountDownBar" onclick="initBarCount()">
-        <div class="divTimeLeft">
+    <div class="container">
+        <!-- timer dispaly liek googlde 39m 30s -->
+
+        
+        <div class="divCountDownBar" onclick="initBarCount()">
+            <div class="divTimeLeft">
+            </div>
         </div>
+        
+        <!-- Input and display text : ?Waht do you want to focus? - div next to  -->
+        <input type="text" class="textInput" placeholder = "What do you want to focus?">
+
+        <!-- start and reset button? -->
+
+        <!-- rightclick veritcal option -->
+
+        <!-- audio https://codepen.io/gabrieleromanato/pen/frczh?editors=1000-->
+        <audio id="timer-beep">
+            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/41203/beep.mp3"/>
+            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/41203/beep.ogg" />
+        </audio>
     </div>
-    <!-- start and reset button? -->
-    <!-- rightclick veritcal option -->
-    
 </body>
 </html>
