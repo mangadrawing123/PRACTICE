@@ -1,0 +1,45 @@
+:root {
+    --background-color: rgb(49, 49, 49);
+    --bar-red-timer: red; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+}
+
+html,body{
+    height: 100%;
+}
+
+body , input, textarea {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: var(--background-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+.container {
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+.divCountDownBar {
+    height: 3vh;
+    background: var(--bar-red-timer);
+}
+.divTimeLeft {
+    float: right;
+    background: var(--background-color);
+    height: 3vh;
+}
+.textInput {
+    overflow: hidden;
+    justify-self: center;
+    color: white;
+    word-wrap: break-word;
+    width: 80%;
+    font-size: 1000%;
+    border: 0;
+    text-transform: capitalize;
+    /* /textintput fithet screenview-large: */
+}
