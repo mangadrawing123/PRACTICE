@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only Bar Timer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background: rgb(37, 37, 37);
+        }
+        .divCountDownBar {
+            height: 3vh;
+            margin-top: 5vh;
+            background: rgb(204, 28, 28);
+        }
+        .divTimeLeft {
+            float: right;
+            background: black;
+            height: 3vh;
+        }
+    </style>
+    
+    <script>
+        function initBarCount() {
+            var divTimeLeft = document.querySelector(".divTimeLeft");
+            var divCountDownBar = document.querySelector(".divCountDownBar");
+            var startTimer = setInterval(barCount, 10)
+            function barCount() {
+               if (divTimeLeft.clientWidth < divCountDownBar.clientWidth ) {
+                   divTimeLeft.style.width = divTimeLeft.clientWidth + 1 + "px";
+               }else {
+                    divTimeLeft.style.width = divCountDownBar.clientWidth + 'px';
+                    clearInterval(startTimer);
+                }
+            }
+        }
+        //reset button?
+
+    </script>
+    
+</head>
+<body>
+    <!-- timer dispaly liek googlde 39m 30s -->
+    <!-- Input and display text : ?Waht do you want to focus? - div next to  -->
+    <div class="divCountDownBar" onclick="initBarCount()">
+        <div class="divTimeLeft">
+        </div>
+    </div>
+    <!-- start and reset button? -->
+    <!-- rightclick veritcal option -->
+    
+</body>
+</html>
