@@ -1,0 +1,84 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  align-items: center;
+}
+.timerwrapper {
+  z-index: -1;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #484949;
+  position: relative;
+  margin: auto;
+  color: #fff;
+}
+textarea {
+  display: block;
+  box-sizing: padding-box;
+  overflow: hidden;
+  background: none;
+  color: #fff;
+  width: 80vw;
+  font-size: 20vh;
+  border-radius: 6px;
+  border: 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+textarea:focus {
+  border: none;
+  outline: none;
+}
+.centered {
+  position: absolute;
+  background: none;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.shrinking {
+  width: 0%;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+  animation: fillBar 60s ease-in infinite;
+  background-image: linear-gradient(to right, #f00439, #f28d0d);
+}
+@-moz-keyframes fillBar {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@-webkit-keyframes fillBar {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@-o-keyframes fillBar {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+@keyframes fillBar {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}

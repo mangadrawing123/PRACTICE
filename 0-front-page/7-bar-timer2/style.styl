@@ -1,51 +1,67 @@
-@import "reset.css"
-
+html,body {
+  margin: 0; padding: 0;
+}
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+      font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+       align-items: center;
 }
 .timerwrapper {
-z-index: -1;
-position: relative;
-height: 100vh;
-width: 100%;
-background: #484949;
-position: relative;
-margin: auto;
-color: white;
+  z-index: -1;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #484949;
+  position: relative;
+  margin: auto;
+  color: white;
+}
+textarea {
+  display: block;
+  box-sizing: padding-box;
+  overflow: hidden;
+  background: none;
+  color: white;
+  width: 80vw;
+  font-size: 20vh;
+  border-radius: 6px;
+  border: 0;
+  text-align: center;
+  text-transform: capitalize;
+  &:focus{
+    border: none;
+    outline: none;
+  }
 }
 .centered {
-
-position: absolute;
-background: none;
-font-size: 30vh;
-color: white;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+  
+  position: absolute;
+  background: none;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 shrinking($item, $duration) {
-$duration = unit($duration, 's');
+  $duration = unit($duration, 's');
+  
+  {$item} {
+    width: 0%;
+    height: 100vh;   
+    position: absolute;
+    bottom: 0;    
+    animation: fillBar $duration ease-in infinite;
+    background-image: linear-gradient(to right, #f00439, #f28d0d);  
+  }  
 
-{$item} {
-  width: 0%;
-  height: 100vh;   
-  position: absolute;
-  bottom: 0;    
-  animation: fillBar $duration ease-in infinite;
-  background-image: linear-gradient(to right, #f00439, #f28d0d);  
-}  
-
-@keyframes fillBar {
-    0% {
-      width: 100%;
-    }
-    100% {
-      width: 0%;
-    }
+  @keyframes fillBar {
+      0% {
+        width: 100%;
+      }
+      100% {
+        width: 0%;
+      }
+  }
 }
-}
 
-/* // Premier parametre : container class */
-/* // Second parametre : temps de l'animation en secondes */
 shrinking('.shrinking', 60);
