@@ -47,7 +47,7 @@ textarea:focus {
   height: 100vh;
   position: absolute;
   bottom: 0;
-  animation: fillBar 60s ease-in infinite;
+  animation: fillBar 3600s ease-in infinite;
   background-image: linear-gradient(to right, #f00439, #f28d0d);
 }
 @-moz-keyframes fillBar {
